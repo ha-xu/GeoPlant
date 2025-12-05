@@ -7,13 +7,13 @@
 #SBATCH --job-name=geoplant
 #SBATCH --output=/scratch/zx1875/EoDL/logs/%x-%j.out
 #SBATCH --error=/scratch/zx1875/EoDL/logs/%x-%j.err
-#SBATCH --chdir=/home/zx1875/EoDL/search-and-learn 
+#SBATCH --chdir=/home/zx1875/EoDL/GeoPlant/
 
 # THIS SCRIPT FILE SHOULD NEVER CHANGE
 
-export MAIN_FOLDER=/home/zx1875/EoDL
+export MAIN_FOLDER=/home/zx1875/EoDL/GeoPlant/
 # export DATA_FOLDER=/scratch/zx1875/EoDL/dataset
-# export LOG_FOLDER=/scratch/zx1875/EoDL/logs
+export LOG_FOLDER=/scratch/zx1875/EoDL/logs
 
 # create log folder if it doesn't exist
 mkdir -p $LOG_FOLDER
