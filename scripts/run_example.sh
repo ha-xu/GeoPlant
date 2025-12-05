@@ -23,4 +23,6 @@ echo "Job ID: $SLURM_JOB_ID"
 
 nvidia-smi
 
+python src/run.py
+
 echo "job finished."
