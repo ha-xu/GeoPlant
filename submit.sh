@@ -3,7 +3,7 @@
 #SBATCH --partition=c12m85-a100-1
 #SBATCH --gres=gpu:1
 #SBATCH --time=08:00:00
-#SBATCH --mem=32G  
+#SBATCH --mem=64G  
 #SBATCH --job-name=geoplant_unzip
 #SBATCH --output=/scratch/zx1875/EoDL/logs/%x-%j.out
 #SBATCH --error=/scratch/zx1875/EoDL/logs/%x-%j.err
