@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python src/run.py
+python src/download_dataset.py
