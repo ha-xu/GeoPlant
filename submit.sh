@@ -31,6 +31,7 @@ nvidia-smi
 # Clone the repository if it doesn't exist
 if [ ! -d "$MAIN_FOLDER" ]; then
     echo "$MAIN_FOLDER does not exist."
+    cd /home/zx1875/EoDL/
     git clone $REPO_URL
 
 # Navigate to the main project directory
