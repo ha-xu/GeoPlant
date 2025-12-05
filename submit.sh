@@ -7,6 +7,7 @@
 #SBATCH --job-name=geoplant
 #SBATCH --output=/scratch/zx1875/EoDL/logs/%x-%j.out
 #SBATCH --error=/scratch/zx1875/EoDL/logs/%x-%j.err
+#SBATCH --chdir=/home/zx1875
 
 # THIS SCRIPT FILE SHOULD NEVER CHANGE
 
