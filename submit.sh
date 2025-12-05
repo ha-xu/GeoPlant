@@ -47,15 +47,13 @@ mkdir SatelitePatches
 mkdir SateliteTimeSeries-Bioclimatic
 mkdir SateliteTimeSeries-Landsat
 
-unzip SatelitePatches.zip -d SatelitePatches
-unzip SateliteTimeSeries-Bioclimatic.zip -d SateliteTimeSeries-Bioclimatic
-unzip SateliteTimeSeries-Landsat.zip -d SateliteTimeSeries-Landsat
 
 # Navigate to the main project directory
 cd $MAIN_FOLDER
 # Pull the latest code from the repository
 git pull
 # Run the script
-bash scripts/run.sh
+# bash scripts/run.sh
+python src/unzip.py
     
 echo "job finished."
