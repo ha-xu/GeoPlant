@@ -4,7 +4,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --time=08:00:00
 #SBATCH --mem=32G  
-#SBATCH --job-name=geoplant
+#SBATCH --job-name=geoplant_unzip
 #SBATCH --output=/scratch/zx1875/EoDL/logs/%x-%j.out
 #SBATCH --error=/scratch/zx1875/EoDL/logs/%x-%j.err
 #SBATCH --chdir=/home/zx1875
@@ -16,7 +16,7 @@
 # Set variables
 export REPO_URL=https://github.com/ha-xu/GeoPlant.git
 export MAIN_FOLDER=/home/zx1875/EoDL/GeoPlant/
-# export DATA_FOLDER=/scratch/zx1875/EoDL/dataset
+export DATA_FOLDER=/scratch/zx1875/EoDL/dataset
 export LOG_FOLDER=/scratch/zx1875/EoDL/logs
 
 # create log folder if it doesn't exist
@@ -37,6 +37,19 @@ if [ ! -d $MAIN_FOLDER ]; then
     cd EoDL
     git clone $REPO_URL
 fi
+
+cd $DATA_FOLDER
+rm -rf SatelitePatches
+rm -rf SateliteTimeSeries-Bioclimatic
+rm -rf SateliteTimeSeries-Landsat
+
+mkdir SatelitePatches
+mkdir SateliteTimeSeries-Bioclimatic
+mkdir SateliteTimeSeries-Landsat
+
+unzip SatelitePatches.zip -d SatelitePatches
+unzip SateliteTimeSeries-Bioclimatic.zip -d SateliteTimeSeries-Bioclimatic
+unzip SateliteTimeSeries-Landsat.zip -d SateliteTimeSeries-Landsat
 
 # Navigate to the main project directory
 cd $MAIN_FOLDER
