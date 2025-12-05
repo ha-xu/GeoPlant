@@ -15,8 +15,8 @@
 
 # Set variables
 export REPO_URL=https://github.com/ha-xu/GeoPlant.git
-export MAIN_FOLDER=/home/zx1875/EoDL/GeoPlant/
-export DATA_FOLDER=/scratch/zx1875/EoDL/dataset
+export MAIN_FOLDER=/home/zx1875/EoDL/GeoPlant
+export DATA_FOLDER=/home/zx1875/EoDL/dataset
 export LOG_FOLDER=/scratch/zx1875/EoDL/logs
 
 # create log folder if it doesn't exist
@@ -54,7 +54,7 @@ cd $MAIN_FOLDER
 git pull
 # Run the script
 # bash scripts/run.sh
-pip install tqdm
+pip install -r requirements.txt
 python src/unzip.py
     
 echo "job finished."
