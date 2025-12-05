@@ -7,10 +7,13 @@
 #SBATCH --job-name=geoplant
 #SBATCH --output=/scratch/zx1875/EoDL/logs/%x-%j.out
 #SBATCH --error=/scratch/zx1875/EoDL/logs/%x-%j.err
-#SBATCH --chdir=/home/zx1875/EoDL/GeoPlant
 
 # THIS SCRIPT FILE SHOULD NEVER CHANGE
 
+
+
+# Set variables
+export REPO_URL="https://github.com/ha-xu/GeoPlant.git"
 export MAIN_FOLDER=/home/zx1875/EoDL/GeoPlant/
 # export DATA_FOLDER=/scratch/zx1875/EoDL/dataset
 export LOG_FOLDER=/scratch/zx1875/EoDL/logs
@@ -21,8 +24,14 @@ mkdir -p $LOG_FOLDER
 # Print job information
 echo "Job starting on $(hostname)"
 echo "Job ID: $SLURM_JOB_ID"
-
 nvidia-smi
+
+###
+
+# Clone the repository if it doesn't exist
+if [ ! -d "$MAIN_FOLDER" ]; then
+    echo "$MAIN_FOLDER does not exist."
+    git clone $REPO_URL
 
 # Navigate to the main project directory
 cd $MAIN_FOLDER
