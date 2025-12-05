@@ -54,6 +54,7 @@ cd $MAIN_FOLDER
 git pull
 # Run the script
 # bash scripts/run.sh
+pip install -r tqdm
 python src/unzip.py
     
 echo "job finished."
