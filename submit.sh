@@ -38,8 +38,8 @@ if [ ! -d $MAIN_FOLDER ]; then
     git clone $REPO_URL
 fi
 
-cd $DATA_FOLDER
-rm -rf *
+# cd $DATA_FOLDER
+# rm -rf *
 
 
 # Navigate to the main project directory
