@@ -13,7 +13,7 @@
 
 
 # Set variables
-export REPO_URL="https://github.com/ha-xu/GeoPlant.git"
+export REPO_URL=https://github.com/ha-xu/GeoPlant.git
 export MAIN_FOLDER=/home/zx1875/EoDL/GeoPlant/
 # export DATA_FOLDER=/scratch/zx1875/EoDL/dataset
 export LOG_FOLDER=/scratch/zx1875/EoDL/logs
@@ -31,7 +31,9 @@ nvidia-smi
 # Clone the repository if it doesn't exist
 if [ ! -d $MAIN_FOLDER ]; then
     echo "$MAIN_FOLDER does not exist."
-    cd /home/zx1875/EoDL/
+    cd /home/zx1875/
+    mkdir EoDL
+    cd EoDL
     git clone $REPO_URL
 fi
 
